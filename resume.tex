@@ -1,0 +1,136 @@
+% Original author: Unknown (ShareLatex Template)
+% Modified by: Gautam Aggrawal
+
+\documentclass[a4paper,1pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{enumitem}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+\addtolength{\voffset}{-0.5cm}
+%Added by kira0204 to set bottom margin
+\addtolength{\textheight}{1.7cm}
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by gautam with \XeTeX\  \today\ for 
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for us+91 9634097975\\e with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Gautam \textsc{Aggrawal}
+		
+	}\href{mailto:gautamaggrawalmzn@gmail.com}{gautamaggrawalmzn@gmail.com} | +91 9634097975\\
+	%\href{https://www.quora.com/profile/gautamaggrawal}{quora.com/profile/gautamaggrawal}\\
+	\href{https://github.com/Gautamaggrawal}{github.com/Gautamaggrawal}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+%\section{Personal Data}
+%
+%\begin{tabular}{rl}
+ %    \textsc{Phone:}     & +91 9790064737\\
+  %  \textsc{email:}     & \href{mailto:gautamaggrawalmzn@gmail.com}{gautamaggrawalmzn@gmail.com}
+%\end{tabular}
+
+%Section: Work Experience at the top
+\section{Internship Experience}
+\begin{tabular}{r|p{11cm}}
+
+ \textsc{Jun-Aug 2019} & Back-end Developer (Intern) at \textsc{Aapnik}\\&\href{https://www.aapnik.com/}{aapnik.com/}\\&\footnotesize{Developed REST APIs for Ecommerce app using Django,Django REST Framework,worked on Haystack and Solar for advance seaching and used AWS S3 containers for storage and routing of any static files such as images, etc.}\\\multicolumn{2}{c}{} \\
+
+ \textsc{Jan-May 2019} & Back-end Developer (Intern) at \textsc{ProsperX Technologies Pvt Ltd}\\&\href{https://prosperx.com/}{prosperx.com}\\&\footnotesize{Developed REST APIs for Property Rental system using Django,Django REST Framework,used JWT for a secure backend api,used Google Maps API and AWS SES services for sending sms and email notifications}\\\multicolumn{2}{c}{} \\
+ 
+\textsc{Dec-Jan 2019} & Python Developer (Intern) at \textsc{10times}\\&\href{https://www.10times.com}{10times.com}\\&\footnotesize{Involved Scripting in Python for web scrapping ,selenium using Beautiful soups and python and providing the data in requried format}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{May} 2020 & Bachelor of Technology in \textsc{Computer Science} and \textsc{Engineering}\\& \textbf{Jaypee University of Engineering \& Technology}, Guna\\&
+ \normalsize \textsc{GPA}: 8.7/10\\&\\
+\textsc{May} 2016& High School (\textsc{Physics}, \textsc{Chemistry} and \textsc{Mathematics})\\&
+\normalsize\textbf{Birla School Pilani}, Pilani
+\\&\normalsize \textsc{Aggregate}: 81.1/100\\
+\end{tabular}
+
+%Section: Projects
+\section{Projects}
+\begin{tabular}{r|p{11cm}}
+
+\textsc{Oct 2018} & \textbf{Competitive Programming Helper} 
+\href{https://gitlab.com/gautamaggrawal/cphackathon}{(gitlab.com/cphelper)}\\&\footnotesize{Written in Python powered by Django, this system is developed to during Codechef API
+hackathon,Used to find the hidden testcases of a c/c++ program. Deployed the complete web app on alibaba
+cloud with ec2 using NGnix and uwsgi and database server on Rds instance.Other
+features include a Testcase Generator for generating random test cases }\\\multicolumn{2}{c}{}\\
+
+\textsc{Nov 2018} & \textbf{Code Differentiator} \href{http://cpdmini.herokuapp.com/}{(cpdmini.herokuapp.com)}\\&\footnotesize{A single page application in Django to check the similarities and differences between two
+c or c++ codes. Complied and compared the program using BASH Script}\\\multicolumn{2}{c}{} \\
+ \textsc{Jan 2019} & \textbf{Attendance Notifier} \href{http://18.191.156.30:8000/api/v1/}{(juetattendance.tk)}\\&\footnotesize{A system for checking the daily attendance and notifing the students if their attendance
+is below 80\% by sending the SMS to the users with the subjects.Used Django, Celery (As task queue), Redis(As Message Broker), Crontab(As scheduler).Deployed the system using Ngnix ,Gunicorn and Supervisord to monitor and control a number of processes.}\\\multicolumn{2}{c}{} 
+
+\end{tabular}
+
+\section{Extracurricular Activities}{\raggedbottom}
+\begin{itemize}
+\item \textbf{Secured 10 Rank} in ‘Codechef API Hackathon' powered by alibaba Cloud
+\item \textbf{Secured 9863 Rank} in ‘Smackdown 2017' codechef's annual multi round programming competition
+\end{itemize}
+
+
+\end{document}
+
